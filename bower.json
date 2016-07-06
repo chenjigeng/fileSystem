@@ -1,0 +1,22 @@
+{
+  "name": "express-blog",
+  "description": "",
+  "main": "",
+  "authors": [
+    "chenjg <178854407@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1",
+    "angular-material": "^1.0.9"
+  }
+}
