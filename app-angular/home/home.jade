@@ -1,0 +1,8 @@
+div(layout="column")
+	md-content
+		md-list(flex layout-padding)
+			md-subheader.md-no-sticky 文章
+			md-list-item.md-2-line(ng-repeat = 'post in posts' ng-click="null")
+				div.md-list-item-text(layout="column")
+					div.md-title {{ post.title }}
+					p create by {{ post.author}}

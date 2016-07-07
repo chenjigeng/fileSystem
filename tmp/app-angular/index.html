@@ -7,13 +7,16 @@
 	  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
 	  <!-- endinject -->
 	  <!-- inject:css -->
-	  <!-- built css files will go here... -->
+	  <link rel="stylesheet" href="/tmp/app-angular/home/home.css">
 	  <!-- endinject -->
 	</head>
 	<body ng-app="app">
-		<h1>你好，这只是测试</h1>
-		<div ng-controller="test">
-			{{ name }}
+		<div layout="column" class="main">
+			<div class="nav" ng-controller="navCtrl">
+				<md-button ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right">登陆</md-button>
+				<md-button ng-click="showRegist($event)" class="right">注册</md-button>
+			</div>
+			<div ui-view></div>
 		</div>
 	 	<!-- bower:js -->
 	  <script src="/bower_components/angular/angular.js"></script>
@@ -25,6 +28,8 @@
 	  <!-- endinject -->
 		<!-- inject:js -->
 	  <script src="/tmp/app-angular/main.js"></script>
+	  <script src="/tmp/app-angular/home/app.home.js"></script>
+	  <script src="/tmp/app-angular/login/login.js"></script>
 	  <!-- endinject -->
 	</body>
 </html>

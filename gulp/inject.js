@@ -5,7 +5,6 @@ var bowerFiles = require('main-bower-files');
 var $ = require('gulp-load-plugins')({pattern: ['gulp-*']});
 var inject = require("gulp-inject")
 
-var t = require("any-promise/register")("bluebird");
 gulp.task('inject',['build'], function() {
   var target = gulp.src('tmp/app-angular/index.html');
 
