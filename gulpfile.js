@@ -32,11 +32,12 @@ gulp.task('browser:reload', function() {
 
 //运行服务器并且监控文件变化
 gulp.task('serve', ['server:start'], function() {
-  gulp.watch(['app-*/**/*.+(jade|scss|sass|ls)', 'app.js'], ['server-restart']);
+  gulp.watch(['app-*/**/*.+(jade|scss|sass|ls|js)', 'app.js'], ['server-restart']);
 });
 
 wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   return (/\.(js|coffee)$/i).test(file);
 }).map(function(file) {
+  console.log("file", file);
   require('./gulp/' + file);
 });

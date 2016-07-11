@@ -6,7 +6,13 @@ var userCtrl = require("../controllers/user-controller")
   res.send('respond with a resource');
 });
 */
-router.get('/regist', function(req, res, next) {
+router.post('/regist', function(req, res) {
+	console.log("enter");
+	console.log("hello");
 	userCtrl.regist(req, res);
+})
+
+router.post("/login", function(req, res) {
+	userCtrl.login(req, res);
 })
 module.exports = router;

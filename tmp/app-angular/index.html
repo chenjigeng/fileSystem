@@ -8,15 +8,34 @@
 	  <!-- endinject -->
 	  <!-- inject:css -->
 	  <link rel="stylesheet" href="/tmp/app-angular/home/home.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/regist/regist.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/passage/create-passage/create-passage.css">
 	  <!-- endinject -->
 	</head>
 	<body ng-app="app">
 		<div layout="column" class="main">
-			<div class="nav" ng-controller="navCtrl">
-				<md-button ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right">登陆</md-button>
-				<md-button ng-click="showRegist($event)" class="right">注册</md-button>
+			<div class="nav">
+				<md-button ng-hide="login" ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right">登陆</md-button>
+				<md-button ng-hide='login' ng-controller="RegistCtrl" ng-click="showRegist($event)" class="right">注册</md-button>
+				<md-menu ng-show="user" ng-controller="nav">
+					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)">{{ user.name }}</md-button>
+					<md-menu-content width="4">
+						<md-menu-item>
+							<md-button ng-click="null">
+								Profile
+							</md-button>
+						</md-menu-item>
+						<md-menu-item>
+							<md-button ng-click="createPass()">
+								创建文章
+							</md-button>
+						</md-menu-item>
+					</md-menu-content>
+				</md-menu>
+				<md-button>Home</md-button>
+				<md-button>Profile</md-button>
 			</div>
-			<div ui-view></div>
+			<div ui-view="main"></div>
 		</div>
 	 	<!-- bower:js -->
 	  <script src="/bower_components/angular/angular.js"></script>
@@ -30,6 +49,8 @@
 	  <script src="/tmp/app-angular/main.js"></script>
 	  <script src="/tmp/app-angular/home/app.home.js"></script>
 	  <script src="/tmp/app-angular/login/login.js"></script>
+	  <script src="/tmp/app-angular/regist/regist.js"></script>
+	  <script src="/tmp/app-angular/passage/create-passage/create-passage.js"></script>
 	  <!-- endinject -->
 	</body>
 </html>
