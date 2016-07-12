@@ -9,6 +9,8 @@
 	  <!-- inject:css -->
 	  <link rel="stylesheet" href="/tmp/app-angular/home/home.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/regist/regist.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/passage/passage-list/passage-list.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/passage/show-passage/show-passage.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/passage/create-passage/create-passage.css">
 	  <!-- endinject -->
 	</head>
@@ -22,7 +24,7 @@
 					<md-menu-content width="4">
 						<md-menu-item>
 							<md-button ng-click="null">
-								Profile
+								个人资料
 							</md-button>
 						</md-menu-item>
 						<md-menu-item>
@@ -30,10 +32,15 @@
 								创建文章
 							</md-button>
 						</md-menu-item>
+						<md-menu-item>
+							<md-button ng-click="Passages()">
+								文章
+							</md-button>
+						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
-				<md-button>Home</md-button>
-				<md-button>Profile</md-button>
+				<md-button ui-sref="home">主页</md-button>
+				<md-button ui-sref="profile">个人资料</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>
@@ -43,6 +50,7 @@
 	  <script src="/bower_components/angular-animate/angular-animate.js"></script>
 	  <script src="/bower_components/angular-aria/angular-aria.js"></script>
 	  <script src="/bower_components/angular-messages/angular-messages.js"></script>
+	  <script src="/bower_components/angular-resource/angular-resource.js"></script>
 	  <script src="/bower_components/angular-material/angular-material.js"></script>
 	  <!-- endinject -->
 		<!-- inject:js -->
@@ -50,6 +58,8 @@
 	  <script src="/tmp/app-angular/home/app.home.js"></script>
 	  <script src="/tmp/app-angular/login/login.js"></script>
 	  <script src="/tmp/app-angular/regist/regist.js"></script>
+	  <script src="/tmp/app-angular/passage/passage-list/passage-list.js"></script>
+	  <script src="/tmp/app-angular/passage/show-passage/show-passage.js"></script>
 	  <script src="/tmp/app-angular/passage/create-passage/create-passage.js"></script>
 	  <!-- endinject -->
 	</body>

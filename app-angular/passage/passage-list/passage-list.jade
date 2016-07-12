@@ -1,0 +1,10 @@
+div(layout="column" layout-padding)
+	div(ng-repeat="passage in passages").md-whiteframe-4dp.passage
+		md-list(flex)
+			md-list-item(ng-click="show()")
+				div
+					h3 {{ passage.title }}
+					h4 create by {{ passage.author }}
+		div(layout="row" layout-align="space-around center")
+			md-button.md-primary.md-raised 编辑
+			md-button.md-raised.md-warn 删除

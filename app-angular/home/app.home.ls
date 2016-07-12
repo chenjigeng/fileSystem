@@ -6,9 +6,12 @@ angular.module("app")
 				views:
 					"main":
 						templateUrl: 'home/home.html'
-						controller: ($scope, result) !->
+						controller: ($scope, result, $rootScope, $state) !->
 							$scope.posts = result.data;
 							console.log result
+							$scope.show = (id)->
+								$rootScope.passageId = id;
+								$state.go("passage.show-passage");
 				url: "/home"
 				resolve: result: ($http) ->
 					$http.get "/post", (data) ->

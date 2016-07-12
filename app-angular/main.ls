@@ -5,5 +5,9 @@ nav = ($scope, $mdDialog, $state) !->
 		$mdOpenMenu(ev);
 	$scope.createPass = !->
 		$state.go("passage.create-passage");
-angular.module "app", ["ui.router", "ngMaterial", 'ngMessages']
+	$scope.Passages = !->
+		console.log("enter");
+		$state.go("passage.list-passage")
+angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource']
 	.controller "nav", nav
+

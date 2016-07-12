@@ -5,9 +5,13 @@
       views: {
         "main": {
           templateUrl: 'home/home.html',
-          controller: function($scope, result){
+          controller: function($scope, result, $rootScope, $state){
             $scope.posts = result.data;
             console.log(result);
+            $scope.show = function(id){
+              $rootScope.passageId = id;
+              return $state.go("passage.show-passage");
+            };
           }
         }
       },

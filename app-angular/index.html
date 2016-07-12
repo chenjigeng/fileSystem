@@ -20,7 +20,7 @@
 					<md-menu-content width="4">
 						<md-menu-item>
 							<md-button ng-click="null">
-								Profile
+								个人资料
 							</md-button>
 						</md-menu-item>
 						<md-menu-item>
@@ -28,10 +28,15 @@
 								创建文章
 							</md-button>
 						</md-menu-item>
+						<md-menu-item>
+							<md-button ng-click="Passages()">
+								文章
+							</md-button>
+						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
-				<md-button>Home</md-button>
-				<md-button>Profile</md-button>
+				<md-button ui-sref="home">主页</md-button>
+				<md-button ui-sref="profile">个人资料</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>

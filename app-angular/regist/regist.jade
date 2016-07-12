@@ -10,6 +10,6 @@ md-dialog(aria-label="Regist" ng-cloak)
 				input(ng-model="password" required)
 			md-input-container
 				label 邮箱
-				input(ng-model="email" required)		
+				input(ng-model="email" required)
 			md-button(ng-disabled="!registForm.$valid" ng-click="submit()").md-primary.md-accent 注册
 		div(ng-show="error").warn {{ error }}

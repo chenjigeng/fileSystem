@@ -15,7 +15,7 @@ userCtrl.regist = function(req, res) {
 			User.save(function(err, User) {
 				if (err) return res.send(401);
 				console.log("regist successfully");
-				res.send(true);
+				res.send(User);
 			})
 		}
 	})

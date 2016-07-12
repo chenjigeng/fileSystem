@@ -10,6 +10,21 @@ angular.module "app"
 				views:
 					"main@":
 						templateUrl: "passage/create-passage/create-passage.html"
-						controller: ($scope) !->
+						controller: ($scope, $http, $rootScope, $state) !->
+							$scope.submit = !->
+								post = 
+									title: $scope.title
+									content: $scope.content
+									author: $rootScope.user.email
+								console.log post
+								$http.post './post/create', post
+									.then(
+										(data)!->
+											console.log(data);
+											console.log("successfully");
+											$state.go("home")
+										(data)!->
+											console.log "fail"
+									)
 							#todo
 			})
