@@ -7,17 +7,15 @@ angular.module "app"
 					"main@":
 						templateUrl: "passage/show-passage/show-passage.html"
 						controller: ($scope, $resource, $rootScope, $state, result) !->
-							while $resource == undefined
-								console.log "enter"
-							$scope.passage = result.data[0];
-							console.log result
+							$scope.passage = result.data.data[0];
+							console.log result.data
 							console.log $scope.passage
 						resolve:
 							result: ($http, $rootScope, $resource) ->
 								console.log("coming");
-								Post = $resource("./post/show/:id", {})
-								Post.get({id: $rootScope.passageId},
-									(data)->
-										console.log data
-										data.data)	
+								url = "./post/show/" + $rootScope.passageId
+								console.log url
+								$http.get url, (data) ->
+									console.log(data)
+									data.data
 			})

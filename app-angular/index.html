@@ -19,7 +19,7 @@
 					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)">{{ user.name }}</md-button>
 					<md-menu-content width="4">
 						<md-menu-item>
-							<md-button ng-click="null">
+							<md-button ng-click="null" ui-sref="user.profile">
 								个人资料
 							</md-button>
 						</md-menu-item>
@@ -36,7 +36,7 @@
 					</md-menu-content>
 				</md-menu>
 				<md-button ui-sref="home">主页</md-button>
-				<md-button ui-sref="profile">个人资料</md-button>
+				<md-button ui-sref="user.profile">个人资料</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>

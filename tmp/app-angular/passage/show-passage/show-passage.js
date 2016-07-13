@@ -6,21 +6,17 @@
         "main@": {
           templateUrl: "passage/show-passage/show-passage.html",
           controller: function($scope, $resource, $rootScope, $state, result){
-            while ($resource === undefined) {
-              console.log("enter");
-            }
-            $scope.passage = result.data[0];
-            console.log(result);
+            $scope.passage = result.data.data[0];
+            console.log(result.data);
             console.log($scope.passage);
           },
           resolve: {
             result: function($http, $rootScope, $resource){
-              var Post;
+              var url;
               console.log("coming");
-              Post = $resource("./post/show/:id", {});
-              return Post.get({
-                id: $rootScope.passageId
-              }, function(data){
+              url = "./post/show/" + $rootScope.passageId;
+              console.log(url);
+              return $http.get(url, function(data){
                 console.log(data);
                 return data.data;
               });

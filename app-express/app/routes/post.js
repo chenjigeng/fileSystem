@@ -25,4 +25,12 @@ router.get("/show/:id", function(req, res, next) {
 	console.log(req.params.id);
 	Post.show(req, res);
 })
+
+router.get("/remove/:id", function(req, res, next) {
+	Post.remove(req, res);
+})
+
+router.post("/save", function(req, res) {
+	Post.save(req, res);
+})
 module.exports = router;

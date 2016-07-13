@@ -39,3 +39,22 @@ PostCtrl.show = function(req, res) {
 		res.send({data:target});
 	})
 }
+
+PostCtrl.remove = function(req, res) {
+	post.remove({_id: req.params.id}, function(err, target) {
+		if (err) {
+			console.log(err);
+			return res.send(401);
+		}
+		res.send(true);
+	})
+}
+
+PostCtrl.save = function(req, res) {
+	console.log(req.body);
+	post.update({_id: req.body._id}, {$set: { title: req.body.title, content: req.body.content}}, function(err, target){
+		if (err) return res.send(401);
+		console.log(target);
+		res.send(target);
+	})
+}

@@ -9,9 +9,10 @@
 	  <!-- inject:css -->
 	  <link rel="stylesheet" href="/tmp/app-angular/home/home.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/regist/regist.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/passage/create-passage/create-passage.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/passage/passage-list/passage-list.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/passage/show-passage/show-passage.css">
-	  <link rel="stylesheet" href="/tmp/app-angular/passage/create-passage/create-passage.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/user/profile/profile.css">
 	  <!-- endinject -->
 	</head>
 	<body ng-app="app">
@@ -23,7 +24,7 @@
 					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)">{{ user.name }}</md-button>
 					<md-menu-content width="4">
 						<md-menu-item>
-							<md-button ng-click="null">
+							<md-button ng-click="null" ui-sref="user.profile">
 								个人资料
 							</md-button>
 						</md-menu-item>
@@ -40,7 +41,7 @@
 					</md-menu-content>
 				</md-menu>
 				<md-button ui-sref="home">主页</md-button>
-				<md-button ui-sref="profile">个人资料</md-button>
+				<md-button ui-sref="user.profile">个人资料</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>
@@ -58,9 +59,11 @@
 	  <script src="/tmp/app-angular/home/app.home.js"></script>
 	  <script src="/tmp/app-angular/login/login.js"></script>
 	  <script src="/tmp/app-angular/regist/regist.js"></script>
+	  <script src="/tmp/app-angular/passage/create-passage/create-passage.js"></script>
+	  <script src="/tmp/app-angular/passage/edit-passage/edit-passage.js"></script>
 	  <script src="/tmp/app-angular/passage/passage-list/passage-list.js"></script>
 	  <script src="/tmp/app-angular/passage/show-passage/show-passage.js"></script>
-	  <script src="/tmp/app-angular/passage/create-passage/create-passage.js"></script>
+	  <script src="/tmp/app-angular/user/profile/profile.js"></script>
 	  <!-- endinject -->
 	</body>
 </html>
