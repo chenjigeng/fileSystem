@@ -18,30 +18,48 @@
 	<body ng-app="app">
 		<div layout="column" class="main">
 			<div class="nav">
-				<md-button ng-hide="login" ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right">登陆</md-button>
-				<md-button ng-hide='login' ng-controller="RegistCtrl" ng-click="showRegist($event)" class="right">注册</md-button>
-				<md-menu ng-show="user" ng-controller="nav">
-					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)">{{ user.name }}</md-button>
+				<md-menu ng-controller="nav">
+					<md-button class="right" ng-click="openLanMenu($mdOpenMenu, $event)" ng-cloak>{{ 
+					"Language" | translate }}</md-button>
 					<md-menu-content width="4">
 						<md-menu-item>
-							<md-button ng-click="null" ui-sref="user.profile">
-								个人资料
+							<md-button ng-click="switchCn()" ng-cloak>
+								{{ "中文" | translate }}
 							</md-button>
 						</md-menu-item>
+						<md-menu-item ng-cloak>
+							<md-button ng-click="switchEn()">
+								{{ "英语" | translate }}
+							</md-button>
+						</md-menu-item>
+					</md-menu-content>
+				</md-menu>				
+				<md-button ng-hide="login" ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right" ng-cloak>{{ "登陆" | translate}}</md-button>
+				<md-button ng-hide='login' ng-controller="RegistCtrl" ng-click="showRegist($event)" class="right" ng-cloak>{{ 
+				"注册" | translate }}</md-button>
+				<md-menu ng-show="user" ng-controller="nav">
+					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)" ng-cloak>{{ user.name || translate}}</md-button>
+					<md-menu-content width="4">
 						<md-menu-item>
+							<md-button ng-click="null" ui-sref="user.profile" ng-cloak>
+								{{ "个人资料" | translate }}
+							</md-button>
+						</md-menu-item>
+						<md-menu-item ng-cloak>
 							<md-button ng-click="createPass()">
 								创建文章
 							</md-button>
 						</md-menu-item>
-						<md-menu-item>
+						<md-menu-item ng-cloak>
 							<md-button ng-click="Passages()">
-								文章
+								{{ "文章" | translate }}
 							</md-button>
 						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
-				<md-button ui-sref="home">主页</md-button>
-				<md-button ui-sref="user.profile">个人资料</md-button>
+				<md-button ui-sref="home" class="md-primary">CJGBlog</md-button>
+				<md-button ui-sref="home" translate ng-cloak>{{ "主页" |translate}}</md-button>
+				<md-button ui-sref="user.profile" ng-cloak>{{ "个人资料" | translate }}</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>
@@ -52,7 +70,11 @@
 	  <script src="/bower_components/angular-aria/angular-aria.js"></script>
 	  <script src="/bower_components/angular-messages/angular-messages.js"></script>
 	  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+	  <script src="/bower_components/angular-translate/angular-translate.js"></script>
+	  <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+	  <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 	  <script src="/bower_components/angular-material/angular-material.js"></script>
+	  <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
 	  <!-- endinject -->
 		<!-- inject:js -->
 	  <script src="/tmp/app-angular/main.js"></script>

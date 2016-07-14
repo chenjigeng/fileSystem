@@ -44,6 +44,8 @@ gulp.task("watch", ["sass:watch", "jade:watch", "livescript:watch"], function() 
 gulp.task("build", ["livescript", "sass", "jade", "watch"], function() {
 	console.log("enter build");
 	console.log(gulp.src(["./app-angular/**/*.html"]));
+	gulp.src(["./app-angular/**/*.json"])
+		.pipe(gulp.dest("tmp/app-angular/"))
 	return gulp.src(["./app-angular/**/*.html"])
 		.pipe(gulp.dest('tmp/app-angular/'))
 		.pipe(browserSync.stream());

@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   var nav;
-  nav = function($scope, $mdDialog, $state){
+  nav = function($scope, $mdDialog, $state, $translate){
     $scope.openMenu = function($mdOpenMenu, ev){
       $mdOpenMenu(ev);
     };
@@ -12,6 +12,24 @@
       console.log("enter");
       $state.go("passage.list-passage");
     };
+    $scope.openLanMenu = function($mdOpenMenu, ev){
+      $mdOpenMenu(ev);
+    };
+    $scope.switchCn = function(){
+      $translate.use("cn");
+    };
+    $scope.switchEn = function(){
+      $translate.use("en");
+    };
   };
-  angular.module("app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource']).controller("nav", nav);
+  angular.module("app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource', 'ngCookies', "pascalprecht.translate"]).controller("nav", nav).config([
+    '$translateProvider', function($translateProvider){
+      $translateProvider.useStaticFilesLoader({
+        prefix: "./data/locale-",
+        suffix: ".json"
+      });
+      $translateProvider.useCookieStorage();
+      $translateProvider.preferredLanguage("cn");
+    }
+  ]);
 }).call(this);
