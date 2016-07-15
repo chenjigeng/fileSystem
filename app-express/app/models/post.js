@@ -5,7 +5,7 @@ var post = mongoose.Schema({
 	author: String,
 	content: String,
 	time: {type: Date, default: Date.now},
-	comments: [{body: String, date: {type:Date, default: Date.now}}]
+	comments: [{body: String, date: {type:Date, default: Date.now}, author: String}]
 })
 
 post.methods.show = function() {

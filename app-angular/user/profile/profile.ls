@@ -7,6 +7,7 @@ angular.module "app"
 			})
 			.state("user.profile", {
 				url: '/profile'
+				authenticate: true
 				views:
 					"main@":
 						templateUrl: "user/profile/profile.html"

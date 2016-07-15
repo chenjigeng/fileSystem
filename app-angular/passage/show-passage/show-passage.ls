@@ -6,8 +6,22 @@ angular.module "app"
 				views:
 					"main@":
 						templateUrl: "passage/show-passage/show-passage.html"
-						controller: ($scope, $resource, $rootScope, $state, result) !->
+						controller: ($scope, $resource, $rootScope, $state, result, $http) !->
 							$scope.passage = result.data.data[0];
+							$scope.submit = !->
+								comment = {body: $scope.content, author: $rootScope.user.name}
+								console.log("comment", comment);
+								$scope.passage.comments.push(comment);
+								console.log($scope.passage);
+								$scope.content = ""
+								$http.post "./post/saveComment", $scope.passage
+									.then(
+										(data) !->
+											console.log(data);
+											$state.reload();
+										(err) !->
+											console.log(err);
+									)
 							console.log result.data
 							console.log $scope.passage
 						resolve:

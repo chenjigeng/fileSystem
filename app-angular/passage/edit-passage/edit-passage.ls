@@ -3,6 +3,7 @@ angular.module "app"
 		$state-provider
 			.state("passage.edit-passage", {
 				url: '/edit'
+				authenticate: true
 				resolve: 
 					result: ($http, $rootScope, $resource) ->
 						console.log("coming");

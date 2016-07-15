@@ -22,7 +22,7 @@
       $translate.use("en");
     };
   };
-  angular.module("app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource', 'ngCookies', "pascalprecht.translate"]).controller("nav", nav).config([
+  angular.module("app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource', 'ngCookies', "pascalprecht.translate", 'angularMoment']).controller("nav", nav).config([
     '$translateProvider', function($translateProvider){
       $translateProvider.useStaticFilesLoader({
         prefix: "./data/locale-",
@@ -30,6 +30,15 @@
       });
       $translateProvider.useCookieStorage();
       $translateProvider.preferredLanguage("cn");
+    }
+  ]).run([
+    "$rootScope", "$state", function($rootScope, $state){
+      $rootScope.$on("$stateChangeStart", function(evt, next){
+        if (next.authenticate && !$rootScope.login) {
+          evt.preventDefault();
+          $state.go("home");
+        }
+      });
     }
   ]);
 }).call(this);

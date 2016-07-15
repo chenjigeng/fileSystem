@@ -58,3 +58,12 @@ PostCtrl.save = function(req, res) {
 		res.send(target);
 	})
 }
+
+PostCtrl.saveComment = function(req, res) {
+	console.log(req.body)
+	post.update({_id: req.body._id}, {$set: req.body }, function(err, target){
+		if (err) return res.send(401);
+		console.log(target);
+		res.send(target);
+	})
+}

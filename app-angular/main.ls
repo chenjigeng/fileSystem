@@ -14,7 +14,7 @@ nav = ($scope, $mdDialog, $state, $translate) !->
     $translate.use("cn")
   $scope.switchEn = !->
     $translate.use("en")
-angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource','ngCookies',"pascalprecht.translate"]
+angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource','ngCookies',"pascalprecht.translate", 'angularMoment']
   .controller "nav", nav
   .config(
     * '$translateProvider'
@@ -26,4 +26,14 @@ angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource','ng
         $translate-provider.use-cookie-storage()
         $translate-provider
           .preferredLanguage("cn"))
+  .run(
+    * "$rootScope"
+      "$state"
+      ($root-scope, $state)!->
+        $root-scope.$on("$stateChangeStart", (evt, next) !->
+            if next.authenticate && !$root-scope.login
+              evt.preventDefault()
+              $state.go("home"))
+      )
+
 

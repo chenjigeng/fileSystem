@@ -2,6 +2,7 @@
   angular.module("app").config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state("passage.edit-passage", {
       url: '/edit',
+      authenticate: true,
       resolve: {
         result: function($http, $rootScope, $resource){
           var url;

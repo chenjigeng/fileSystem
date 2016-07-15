@@ -3,6 +3,7 @@ angular.module "app"
 		$state-provider
 			.state("passage.list-passage", {
 				url: '/list'
+				authenticate: true
 				resolve: 
 					result: ($http, $rootScope, $resource) ->
 						console.log("coming");

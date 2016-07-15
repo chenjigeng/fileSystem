@@ -21,6 +21,8 @@
     "angular-resource": "^1.5.7",
     "angular-translate": "^2.11.0",
     "angular-translate-storage-cookie": "^2.11.0",
-    "angular-translate-loader-static-files": "^2.11.0"
+    "angular-translate-loader-static-files": "^2.11.0",
+    "angular-momentjs": "^0.2.2",
+    "angular-moment": "^0.10.3"
   }
 }

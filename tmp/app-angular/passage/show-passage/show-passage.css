@@ -3005,3 +3005,7 @@
 
 .mr-100 {
   margin-right: 100px; }
+
+.comment {
+  max-height: 400px;
+  overflow: scroll; }

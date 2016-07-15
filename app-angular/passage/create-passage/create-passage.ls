@@ -7,6 +7,7 @@ angular.module "app"
 			})
 			.state("passage.create-passage", {
 				url: '/create'
+				authenticate: true
 				views:
 					"main@":
 						templateUrl: "passage/create-passage/create-passage.html"

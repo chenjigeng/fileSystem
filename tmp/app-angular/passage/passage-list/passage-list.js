@@ -2,6 +2,7 @@
   angular.module("app").config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state("passage.list-passage", {
       url: '/list',
+      authenticate: true,
       resolve: {
         result: function($http, $rootScope, $resource){
           var url;

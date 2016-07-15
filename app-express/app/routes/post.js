@@ -33,4 +33,9 @@ router.get("/remove/:id", function(req, res, next) {
 router.post("/save", function(req, res) {
 	Post.save(req, res);
 })
+
+router.post("/saveComment", function(req, res) {
+	console.log(req.body);
+	Post.saveComment(req, res);
+})
 module.exports = router;
