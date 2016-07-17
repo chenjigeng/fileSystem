@@ -1,6 +1,6 @@
 (function(){
   var LoginCtrl, loginCtrl;
-  LoginCtrl = function($scope, $mdDialog, $mdMedia){
+  LoginCtrl = function($scope, $mdDialog, $mdMedia, $rootScope){
     $scope.showLogin = function(ev){
       $mdDialog.show({
         controller: loginCtrl,
@@ -9,6 +9,10 @@
         targetEvent: ev,
         clickOutsideToClose: true
       });
+    };
+    $scope.Logout = function(){
+      $rootScope.user = {};
+      $rootScope.login = false;
     };
   };
   loginCtrl = function($rootScope, $scope, $mdDialog, $http){

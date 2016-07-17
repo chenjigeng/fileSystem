@@ -41,7 +41,7 @@
 					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)" ng-cloak>{{ user.name || translate}}</md-button>
 					<md-menu-content width="4">
 						<md-menu-item>
-							<md-button ng-click="null" ui-sref="user.profile" ng-cloak>
+							<md-button ng-click="null" ui-sref="user.profile" ng-cloak ng-show="login">
 								{{ "个人资料" | translate }}
 							</md-button>
 						</md-menu-item>
@@ -57,9 +57,10 @@
 						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
+				<md-button ng-show="login" ng-controller="LoginCtrl" ng-click="Logout()" class="right" ng-cloak>{{ "logout" || translate}}</md-button>
 				<md-button ui-sref="home">CJGBlog</md-button>
 				<md-button ui-sref="home" translate ng-cloak>{{ "主页" |translate}}</md-button>
-				<md-button ui-sref="user.profile" ng-cloak>{{ "个人资料" | translate }}</md-button>
+				<md-button ui-sref="user.profile" ng-cloak ng-show="login">{{ "个人资料" | translate }}</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>

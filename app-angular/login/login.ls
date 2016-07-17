@@ -1,4 +1,4 @@
-LoginCtrl = ($scope, $mdDialog, $mdMedia) !->
+LoginCtrl = ($scope, $mdDialog, $mdMedia, $rootScope) !->
   $scope.showLogin = (ev) !->
     $mdDialog.show({
       controller: loginCtrl,
@@ -7,6 +7,9 @@ LoginCtrl = ($scope, $mdDialog, $mdMedia) !->
       targetEvent: ev
       clickOutsideToClose: true
     })
+  $scope.Logout = !->
+    $rootScope.user = {};
+    $rootScope.login = false
 
 loginCtrl = ($rootScope, $scope, $mdDialog,$http) !->
   $scope.submit = !->
