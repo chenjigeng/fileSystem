@@ -4,13 +4,23 @@
       url: '/list',
       authenticate: true,
       resolve: {
-        result: function($http, $rootScope, $resource){
+        result: function($http, $rootScope, $resource, $state, $timeout){
           var url;
           console.log("coming");
-          url = "./post/get/" + $rootScope.user.email;
-          return $http.get(url, function(data){
-            return data.data;
-          });
+          if (!$rootScope.user || !$rootScope.user.email) {
+            return $timeout(function(){
+              var url;
+              url = "./post/get/" + $rootScope.user.email;
+              return $http.get(url, function(data){
+                return data.data;
+              });
+            }, 250);
+          } else {
+            url = "./post/get/" + $rootScope.user.email;
+            return $http.get(url, function(data){
+              return data.data;
+            });
+          }
         }
       },
       views: {

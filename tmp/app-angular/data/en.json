@@ -1,0 +1,20 @@
+{
+    "home": "home",
+    "login": "login",
+    "regist": "regist",
+    "logout": "logout",
+    "blog": "blog",
+    "username": "username",
+    "password": "password",
+    "email": "email",
+    "comment": "comment",
+    "edit": "edit",
+    "remove": "remove",
+    "delete": "delete",
+    "add": "add",
+    "profile": "profile",
+    "language": "language",
+    "country": "country",
+    "passage": "passage",
+    "settings": "settings"
+}

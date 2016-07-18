@@ -38,6 +38,5 @@ gulp.task('serve', ['server:start'], function() {
 wrench.readdirSyncRecursive('./gulp').filter(function(file) {
   return (/\.(js|coffee)$/i).test(file);
 }).map(function(file) {
-  console.log("file", file);
   require('./gulp/' + file);
 });

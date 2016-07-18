@@ -11,9 +11,11 @@ nav = ($scope, $mdDialog, $state, $translate, $rootScope, $cookie-store) !->
   $scope.openLanMenu = ($mdOpenMenu, ev) !->
     $mdOpenMenu(ev);
   $scope.switchCn = !->
-    $translate.use("cn")
+    $translate.use("zh-cmn-Hans")
   $scope.switchEn = !->
     $translate.use("en")
+  $scope.switchCn1 = !->
+    $translate.use("zh-cmn-Hant")
   $scope.Logout = !->
     $rootScope.user = {};
     $rootScope.login = false
@@ -27,12 +29,12 @@ angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngFileUpload','
       '$cookiesProvider'
       ($translate-provider, $cookies-provider) !->
         $translate-provider.use-static-files-loader(
-          prefix:"./data/locale-"
+          prefix:"./data/"
           suffix: ".json"
         )
         $translate-provider.use-cookie-storage()
         $translate-provider
-          .preferredLanguage("cn"))
+          .preferredLanguage("zh-cmn-Hans"))
   .run(
     * "$rootScope"
       "$state"

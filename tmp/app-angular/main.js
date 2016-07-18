@@ -16,10 +16,13 @@
       $mdOpenMenu(ev);
     };
     $scope.switchCn = function(){
-      $translate.use("cn");
+      $translate.use("zh-cmn-Hans");
     };
     $scope.switchEn = function(){
       $translate.use("en");
+    };
+    $scope.switchCn1 = function(){
+      $translate.use("zh-cmn-Hant");
     };
     $scope.Logout = function(){
       $rootScope.user = {};
@@ -32,11 +35,11 @@
   angular.module("app", ["ui.router", "ngMaterial", 'ngMessages', 'ngFileUpload', 'ngResource', 'ngCookies', "pascalprecht.translate", 'angularMoment']).controller("nav", nav).config([
     '$translateProvider', '$cookiesProvider', function($translateProvider, $cookiesProvider){
       $translateProvider.useStaticFilesLoader({
-        prefix: "./data/locale-",
+        prefix: "./data/",
         suffix: ".json"
       });
       $translateProvider.useCookieStorage();
-      $translateProvider.preferredLanguage("cn");
+      $translateProvider.preferredLanguage("zh-cmn-Hans");
     }
   ]).run([
     "$rootScope", "$state", "$cookies", "$http", function($rootScope, $state, $cookies, $http){

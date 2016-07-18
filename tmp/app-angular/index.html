@@ -17,11 +17,11 @@
 	  <!-- endinject -->
 	</head>
 	<body ng-app="app">
-		<div layout="column" class="main">
+		<div layout="column" class="main" class="ng-cloak" ng-cloak>
 			<div class="nav">
 				<md-menu ng-controller="nav">
 					<md-button class="right" ng-click="openLanMenu($mdOpenMenu, $event)" ng-cloak>{{ 
-					"Language" | translate }}</md-button>
+					"language" | translate }}</md-button>
 					<md-menu-content width="4">
 						<md-menu-item>
 							<md-button ng-click="switchCn()" ng-cloak>
@@ -33,17 +33,22 @@
 								{{ "英语" | translate }}
 							</md-button>
 						</md-menu-item>
+						<md-menu-item ng-cloak>
+							<md-button ng-click="switchCn1()">
+								{{ "繁体" | translate }}
+							</md-button>
+						</md-menu-item>
 					</md-menu-content>
 				</md-menu>				
-				<md-button ng-hide="login" ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right" ng-cloak>{{ "登陆" | translate}}</md-button>
+				<md-button ng-hide="login" ng-controller="LoginCtrl" ng-click="showLogin($event)" class="right" ng-cloak>{{ "login" | translate}}</md-button>
 				<md-button ng-hide='login' ng-controller="RegistCtrl" ng-click="showRegist($event)" class="right" ng-cloak>{{ 
-				"注册" | translate }}</md-button>
+				"regist" | translate }}</md-button>
 				<md-menu ng-show="user" ng-controller="nav">
 					<md-button class="right" ng-click="openMenu($mdOpenMenu, $event)" ng-cloak>{{ user.name || translate}}</md-button>
 					<md-menu-content width="4">
 						<md-menu-item>
 							<md-button ng-click="null" ui-sref="user.profile" ng-cloak ng-show="login">
-								{{ "个人资料" | translate }}
+								{{ "profile" | translate }}
 							</md-button>
 						</md-menu-item>
 						<md-menu-item ng-cloak>
@@ -53,18 +58,18 @@
 						</md-menu-item>
 						<md-menu-item ng-cloak>
 							<md-button ng-click="Passages()">
-								{{ "文章" | translate }}
+								{{ "passage" | translate }}
 							</md-button>
 						</md-menu-item>
 						<md-menu-item ng-cloak>
 							<md-button ng-click="Logout()">
-								{{ "logout" || translate}}
+								{{ "logout" || translate }}
 							</md-button>
 						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
 				<md-button ui-sref="home">CJGBlog</md-button>
-				<md-button ui-sref="home" translate ng-cloak>{{ "主页" |translate}}</md-button>
+				<md-button ui-sref="home" translate ng-cloak>{{ "home" |translate}}</md-button>
 			</div>
 			<div ui-view="main"></div>
 		</div>

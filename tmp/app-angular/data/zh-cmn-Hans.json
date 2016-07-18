@@ -1,0 +1,20 @@
+{
+    "home": "主页",
+    "login": "登录",
+    "regist": "注册",
+    "logout": "退出",
+    "blog": "博客",
+    "username": "用户名",
+    "password": "密码",
+    "email": "邮箱",
+    "comment": "评论",
+    "edit": "编辑",
+    "remove": "删除",
+    "delete": "删除",
+    "add": "增加",
+    "profile": "个人资料",
+    "language": "语言",
+    "country": "国家",
+    "passage": "文章",
+    "settings": "设置"
+}

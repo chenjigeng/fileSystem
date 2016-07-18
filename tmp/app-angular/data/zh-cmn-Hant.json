@@ -1,0 +1,20 @@
+{
+    "home": "主頁",
+    "login": "登錄",
+    "regist": "註冊",
+    "logout": "退出",
+    "blog": "博客",
+    "username": "用戶名",
+    "password": "密碼",
+    "email": "郵箱",
+    "comment": "評論",
+    "edit": "編輯",
+    "remove": "刪除",
+    "delete": "刪除",
+    "add": "增加",
+    "profile": "個人資料",
+    "language": "語言",
+    "country": "國家",
+    "passage": "文章",
+    "settings": "設置"
+}

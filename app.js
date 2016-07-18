@@ -9,8 +9,6 @@ var routes = require('./app-express/app/routes/post');
 var users = require('./app-express/app/routes/users');
 var debug = require('debug')('express-blog:server');
 var multipart = require('connect-multiparty');
-var cookieSession = require('cookie-session')
-var session = require("express-session")
 var app = express();
 
 // view engine setup

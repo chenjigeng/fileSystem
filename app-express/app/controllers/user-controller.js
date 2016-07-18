@@ -56,8 +56,6 @@ userCtrl.uploadFile = function(req, res) {
 	var content;
 	try {
 		content = fs.readFileSync(file.path);
-		console.log("enter here");
-		console.log(content);
 		var target = "public/img/" + req.body.username + ".jpg"
 		fs.writeFileSync(target, content);
 	}

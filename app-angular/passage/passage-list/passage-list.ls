@@ -5,11 +5,19 @@ angular.module "app"
 				url: '/list'
 				authenticate: true
 				resolve: 
-					result: ($http, $rootScope, $resource) ->
+					result: ($http, $rootScope, $resource, $state, $timeout) ->
 						console.log("coming");
-						url = "./post/get/" + $rootScope.user.email
-						$http.get url, (data)->
-							data.data
+						if !$root-scope.user || !$root-scope.user.email
+							$timeout(
+								->
+									url = "./post/get/" + $rootScope.user.email
+									$http.get url, (data)->
+										data.data
+								250)
+						else
+							url = "./post/get/" + $rootScope.user.email
+							$http.get url, (data)->
+								data.data
 				views:
 					"main@":
 						templateUrl: "passage/passage-list/passage-list.html"
