@@ -1,6 +1,6 @@
 'use strict'
 
-nav = ($scope, $mdDialog, $state, $translate) !->
+nav = ($scope, $mdDialog, $state, $translate, $rootScope) !->
   $scope.openMenu = ($mdOpenMenu, ev) !->
     $mdOpenMenu(ev);
   $scope.createPass = !->
@@ -14,7 +14,10 @@ nav = ($scope, $mdDialog, $state, $translate) !->
     $translate.use("cn")
   $scope.switchEn = !->
     $translate.use("en")
-angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngResource','ngCookies',"pascalprecht.translate", 'angularMoment']
+  $scope.Logout = !->
+    $rootScope.user = {};
+    $rootScope.login = false
+angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngFileUpload','ngResource','ngCookies',"pascalprecht.translate", 'angularMoment']
   .controller "nav", nav
   .config(
     * '$translateProvider'

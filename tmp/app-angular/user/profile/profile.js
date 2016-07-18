@@ -11,6 +11,10 @@
           templateUrl: "user/profile/profile.html",
           controller: function($scope, $resource, $rootScope, $state){
             $scope.user = $rootScope.user;
+            $scope.imgSrc = "public/img/" + $scope.user.email + ".jpg";
+            $scope.editProfile = function(){
+              $state.go("user.edit");
+            };
           }
         }
       }

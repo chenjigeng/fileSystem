@@ -13,4 +13,7 @@ angular.module "app"
 						templateUrl: "user/profile/profile.html"
 						controller: ($scope, $resource, $rootScope, $state) !->
 							$scope.user = $rootScope.user
+							$scope.imgSrc = "public/img/" + $scope.user.email + ".jpg"
+							$scope.edit-profile = !->
+								$state.go("user.edit");
 			})

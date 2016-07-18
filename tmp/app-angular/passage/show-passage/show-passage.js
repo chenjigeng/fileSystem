@@ -9,8 +9,9 @@
             $scope.passage = result.data.data[0];
             $scope.submit = function(){
               var comment;
-              if (!$rootScope.user) {
+              if (!$rootScope.login) {
                 alert("登录了才能评论");
+                return;
               }
               comment = {
                 body: $scope.content,

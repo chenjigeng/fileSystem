@@ -23,6 +23,8 @@
     "angular-translate-storage-cookie": "^2.11.0",
     "angular-translate-loader-static-files": "^2.11.0",
     "angular-momentjs": "^0.2.2",
-    "angular-moment": "^0.10.3"
+    "angular-moment": "^0.10.3",
+    "ng-file-upload": "^12.0.4",
+    "ng-file-upload-shim": "^12.0.4"
   }
 }

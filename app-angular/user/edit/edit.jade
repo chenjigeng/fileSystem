@@ -1,0 +1,16 @@
+div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-50
+  form(name="editForm" layout="column")
+    md-input-container
+      label 姓名
+      input(ng-model="user.name")
+    md-input-container
+      label 手机号码
+      input(ng-model="user.phone")
+    md-input-container
+      label 联系方式
+      input(ng-model="user.link")
+    div(layout="row")
+      md-button.md-accent(ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-resize="{width: 200, heigth: 200}"
+      ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100") 上传头像: Select
+    md-button.md-accent(ng-click="edit()") 确定修改
+

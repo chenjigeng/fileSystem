@@ -5,4 +5,4 @@ div(layout="column")
 			md-list-item.md-2-line(ng-repeat = 'post in posts' ng-click="show(post._id)")
 				div.md-list-item-text(layout="column")
 					div.md-title {{ post.title }}
-					p create by {{ post.author}}
+					p.right_author create by {{ post.author}}

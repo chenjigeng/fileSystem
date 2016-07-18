@@ -1,5 +1,5 @@
 var user = require("../models/user")
-
+var fs = require("fs")
 var userCtrl = {};
 module.exports = userCtrl;
 
@@ -33,4 +33,36 @@ userCtrl.login = function(req, res) {
 		}
 		console.log(user);
 	})
+}
+
+userCtrl.edit = function(req, res) {
+	console.log(req.body); 
+	user.update({_id:req.body._id}, {$set: req.body}, function(err, target) {
+		if (err)  {
+			console.log(err);
+			return res.send(401);
+		}
+		console.log(target);
+		res.send(target);
+	})
+
+}
+
+userCtrl.uploadFile = function(req, res) {
+	console.log("I am here");
+	console.log(req);
+	var file = req.files.file;
+	console.log(file);
+	var content;
+	try {
+		content = fs.readFileSync(file.path);
+		console.log("enter here");
+		console.log(content);
+		var target = "public/img/" + req.body.username + ".jpg"
+		fs.writeFileSync(target, content);
+	}
+	catch(err) {
+		console.log(err);
+	}
+	res.send(200);
 }

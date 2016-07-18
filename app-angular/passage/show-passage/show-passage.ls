@@ -9,8 +9,9 @@ angular.module "app"
 						controller: ($scope, $resource, $rootScope, $state, result, $http) !->
 							$scope.passage = result.data.data[0];
 							$scope.submit = !->
-								if !$rootScope.user
+								if !$rootScope.login
 									alert("登录了才能评论")
+									return
 								comment = {body: $scope.content, author: $rootScope.user.name}
 								console.log("comment", comment);
 								$scope.passage.comments.push(comment);

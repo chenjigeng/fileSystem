@@ -12,6 +12,7 @@
 	  <link rel="stylesheet" href="/tmp/app-angular/passage/create-passage/create-passage.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/passage/passage-list/passage-list.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/passage/show-passage/show-passage.css">
+	  <link rel="stylesheet" href="/tmp/app-angular/user/edit/edit.css">
 	  <link rel="stylesheet" href="/tmp/app-angular/user/profile/profile.css">
 	  <!-- endinject -->
 	</head>
@@ -55,9 +56,13 @@
 								{{ "文章" | translate }}
 							</md-button>
 						</md-menu-item>
+						<md-menu-item ng-cloak>
+							<md-button ng-click="Logout()">
+								{{ "logout" || translate}}
+							</md-button>
+						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
-				<md-button ng-show="login" ng-controller="LoginCtrl" ng-click="Logout()" class="right" ng-cloak>{{ "logout" || translate}}</md-button>
 				<md-button ui-sref="home">CJGBlog</md-button>
 				<md-button ui-sref="home" translate ng-cloak>{{ "主页" |translate}}</md-button>
 				<md-button ui-sref="user.profile" ng-cloak ng-show="login">{{ "个人资料" | translate }}</md-button>
@@ -76,6 +81,8 @@
 	  <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 	  <script src="/bower_components/moment/moment.js"></script>
 	  <script src="/bower_components/angular-moment/angular-moment.js"></script>
+	  <script src="/bower_components/ng-file-upload/ng-file-upload.js"></script>
+	  <script src="/bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
 	  <script src="/bower_components/angular-material/angular-material.js"></script>
 	  <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
 	  <script src="/bower_components/angular-momentjs/angular-momentjs.js"></script>
@@ -89,6 +96,7 @@
 	  <script src="/tmp/app-angular/passage/edit-passage/edit-passage.js"></script>
 	  <script src="/tmp/app-angular/passage/passage-list/passage-list.js"></script>
 	  <script src="/tmp/app-angular/passage/show-passage/show-passage.js"></script>
+	  <script src="/tmp/app-angular/user/edit/edit.js"></script>
 	  <script src="/tmp/app-angular/user/profile/profile.js"></script>
 	  <!-- endinject -->
 	</body>
