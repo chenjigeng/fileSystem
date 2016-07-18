@@ -26,6 +26,10 @@ userCtrl.login = function(req, res) {
 	user.find({email: req.body.email, password: req.body.password}, function(err, user) {
 		if(err) console.log("err");
 		if (user.length > 0) {
+			console.log(req.session);
+			req.session.email = user[0].email
+			console.log(req.session.email);
+			console.log(req.session)
 			res.send(user);
 		}
 		else {
@@ -65,4 +69,20 @@ userCtrl.uploadFile = function(req, res) {
 		console.log(err);
 	}
 	res.send(200);
+}
+
+userCtrl.logout = function(req, res) {
+	res.session.email = null;
+}
+
+userCtrl.get = function(req, res) {
+	console.log(req.params.email);
+	user.find({email: req.params.email}, function(err, target) {
+		if (err) {
+			console.log(err);
+			return res.send(401);
+		}
+		console.log(target);
+		res.send({user:target});
+	})
 }

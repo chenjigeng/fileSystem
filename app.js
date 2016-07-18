@@ -9,7 +9,8 @@ var routes = require('./app-express/app/routes/post');
 var users = require('./app-express/app/routes/users');
 var debug = require('debug')('express-blog:server');
 var multipart = require('connect-multiparty');
-
+var cookieSession = require('cookie-session')
+var session = require("express-session")
 var app = express();
 
 // view engine setup
@@ -21,10 +22,20 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+//使用cookie
+/*app.use(cookieParser("blog", { maxAge: 60 * 60 * 1000 }
+));*/
 app.use(cookieParser());
+app.use(session({
+	secret: "blog",
+	cookie: { maxAge: 60 * 60 * 1000 }
+})); 
+/*app.use(cookieSession({ secret: 'blog', cookie: { maxAge: 60 * 60 * 1000 }}));*/
+//设置静态文件的路径
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('./'));
 app.use(express.static('./tmp/app-angular'));
+
 app.use('/post', routes);
 app.use('/users', users);
 

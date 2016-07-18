@@ -26,4 +26,8 @@ router.post("/edit", function(req, res) {
 router.post("/uploadFile",multipartyMiddleware, function(req, res) {
 	userCtrl.uploadFile(req, res);
 })
+
+router.get("/:email", function(req, res) {
+	userCtrl.get(req, res);
+})
 module.exports = router;

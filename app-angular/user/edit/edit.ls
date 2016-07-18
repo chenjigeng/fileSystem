@@ -9,7 +9,12 @@ angular.module "app"
             templateUrl: "user/edit/edit.html"
             controller: ($scope, $resource, $rootScope, $state, $http, Upload) !->
               $scope.user = $rootScope.user
+
               $scope.edit = !->
+                username = "";
+                if $scope.file
+                  username = $scope.user.email + Date.now().toString();
+                  $scope.user.url = "public/img/" + username + ".jpg"
                 $http.post "/users/edit", $scope.user
                   .then(
                     (data)!->
@@ -23,7 +28,7 @@ angular.module "app"
                 if $scope.file
                   Upload.upload({
                     url: '/users/uploadFile',
-                    data: {file: $scope.file, username: $scope.user.email}
+                    data: {file: $scope.file, username: username}
                   }).then( 
                     (resp)!-> 
                       console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);

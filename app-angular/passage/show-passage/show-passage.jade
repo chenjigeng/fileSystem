@@ -1,4 +1,4 @@
-div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-40
+div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-50
 	.md-title.title {{ passage.title }}
 	md-content(flex layout-padding)
 		p {{ passage.content }}
@@ -6,7 +6,7 @@ div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-40
 	form(name="commentForm" layout="column")
 		textarea(rows="5" layout-padding required ng-model="content" name="content").content
 		md-button(ng-click="submit()" ng-disabled="!commentForm.$valid").md-primary.md-accent 提交评论
-	div(ng-repeat='comment in passage.comments' class='comment-num md-whiteframe-5dp comments').mb-10
+	div(ng-repeat='comment in passage.comments| orderBy: "-date"' class='comment-num md-whiteframe-5dp comments').mb-10
 		div.md-subhead  
 			{{"#" + ($index + 1)}}楼 
 			span(am-time-ago="comment.date")

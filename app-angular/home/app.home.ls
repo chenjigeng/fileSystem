@@ -4,7 +4,7 @@ angular.module("app")
 		$state-provider
 			.state("home", {
 				views:
-					"main":
+					"main@":
 						templateUrl: 'home/home.html'
 						controller: ($scope, result, $rootScope, $state) !->
 							$scope.posts = result.data;

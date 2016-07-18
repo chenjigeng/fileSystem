@@ -9,6 +9,12 @@
           controller: function($scope, $resource, $rootScope, $state, $http, Upload){
             $scope.user = $rootScope.user;
             $scope.edit = function(){
+              var username;
+              username = "";
+              if ($scope.file) {
+                username = $scope.user.email + Date.now().toString();
+                $scope.user.url = "public/img/" + username + ".jpg";
+              }
               $http.post("/users/edit", $scope.user).then(function(data){
                 console.log(data);
                 console.log("edit successfully");
@@ -23,7 +29,7 @@
                   url: '/users/uploadFile',
                   data: {
                     file: $scope.file,
-                    username: $scope.user.email
+                    username: username
                   }
                 }).then(function(resp){
                   console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);

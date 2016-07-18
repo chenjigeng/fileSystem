@@ -3,7 +3,7 @@
     $urlRouterProvider.otherwise("/home");
     $stateProvider.state("home", {
       views: {
-        "main": {
+        "main@": {
           templateUrl: 'home/home.html',
           controller: function($scope, result, $rootScope, $state){
             $scope.posts = result.data;
