@@ -1,7 +1,7 @@
 div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-50
 	.md-title.title {{ passage.title }}
 	md-content(flex layout-padding)
-		p {{ passage.content }}
+		div(ng-bind-html="passage.content")
 	span.right_author 作者:{{ passage.author}}
 	form(name="commentForm" layout="column")
 		textarea(rows="5" layout-padding required ng-model="content" name="content").content

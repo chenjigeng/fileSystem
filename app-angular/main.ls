@@ -22,7 +22,7 @@ nav = ($scope, $mdDialog, $state, $translate, $rootScope, $cookie-store) !->
     $cookie-store.remove("email")
     $state.go("home")
     console.log("logout")
-angular.module "app", ["ui.router", "ngMaterial", 'ngMessages', 'ngFileUpload','ngResource','ngCookies',"pascalprecht.translate", 'angularMoment']
+angular.module "app", ["ui.router", "ngMaterial","textAngular", 'ngMessages', 'ngFileUpload','ngResource','ngCookies',"pascalprecht.translate", 'angularMoment']
   .controller "nav", nav
   .config(
     * '$translateProvider'

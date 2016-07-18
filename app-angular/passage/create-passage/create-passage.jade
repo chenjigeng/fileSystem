@@ -5,8 +5,5 @@ div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-50
 			input(ng-model="title" name="title" required)
 			div(ng-messages="passForm.title.$error")
 				div(ng-message="required") 标题不能为空
-		textarea(rows="15" layout-padding required ng-model="content" name="content").content
-		md-input-container
-			div(ng-messages="passForm.content.$error" ng-show='passForm.content.$dirty').error
-				div(ng-message="required") 内容不能为空
-		md-button.md-primary.md-accent(ng-click="submit()") 创建
+		div(text-angular ng-model="content")
+		md-button.md-primary.md-accent(ng-click="submit()" ng-disabled="!passForm.$valid") 创建
