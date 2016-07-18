@@ -26,10 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /*app.use(cookieParser("blog", { maxAge: 60 * 60 * 1000 }
 ));*/
 app.use(cookieParser());
-app.use(session({
-	secret: "blog",
-	cookie: { maxAge: 60 * 60 * 1000 }
-})); 
 /*app.use(cookieSession({ secret: 'blog', cookie: { maxAge: 60 * 60 * 1000 }}));*/
 //设置静态文件的路径
 app.use(express.static(path.join(__dirname, 'public')));

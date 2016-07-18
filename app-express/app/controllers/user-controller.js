@@ -26,10 +26,6 @@ userCtrl.login = function(req, res) {
 	user.find({email: req.body.email, password: req.body.password}, function(err, user) {
 		if(err) console.log("err");
 		if (user.length > 0) {
-			console.log(req.session);
-			req.session.email = user[0].email
-			console.log(req.session.email);
-			console.log(req.session)
 			res.send(user);
 		}
 		else {
