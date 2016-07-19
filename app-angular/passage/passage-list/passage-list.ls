@@ -23,6 +23,9 @@ angular.module "app"
 						templateUrl: "passage/passage-list/passage-list.html"
 						controller: ($scope, $http, $rootScope, $state, result) !->
 							$scope.passages = result.data.data;
+							$scope.limit = 3
+							$scope.addMoreItems = !->
+								$scope.limit += 3;
 							console.log result
 							console.log $scope.passages
 							$scope.show = (id)!->

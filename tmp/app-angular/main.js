@@ -32,7 +32,7 @@
       console.log("logout");
     };
   };
-  angular.module("app", ["ui.router", "ngMaterial", "textAngular", 'ngMessages', 'ngFileUpload', 'ngResource', 'ngCookies', "pascalprecht.translate", 'angularMoment']).controller("nav", nav).config([
+  angular.module("app", ["ui.router", "ngMaterial", "textAngular", 'infinite-scroll', 'ngMessages', 'ngFileUpload', 'ngResource', 'ngCookies', "pascalprecht.translate", 'angularMoment']).controller("nav", nav).config([
     '$translateProvider', '$cookiesProvider', function($translateProvider, $cookiesProvider){
       $translateProvider.useStaticFilesLoader({
         prefix: "./data/",

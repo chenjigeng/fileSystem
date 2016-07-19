@@ -1,5 +1,5 @@
-div(layout="column" layout-padding)
-	div(ng-repeat="passage in passages").md-whiteframe-4dp.passage.mt-50
+div(layout="column" layout-padding infinite-scroll="addMoreItems()")
+	div(ng-repeat="passage in passages | limitTo: limit").md-whiteframe-4dp.passage.mt-50
 		md-list(flex)
 			md-list-item(ng-click="show(passage._id)")
 				div(layout="column")

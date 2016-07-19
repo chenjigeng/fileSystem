@@ -8,6 +8,10 @@ angular.module "app"
 						templateUrl: "passage/show-passage/show-passage.html"
 						controller: ($scope, $resource, $rootScope, $state, result, $http) !->
 							$scope.passage = result.data.data[0];
+							$scope.limit = 5
+							$scope.addMoreItems = !->
+								console.log $scope.limit
+								$scope.limit += 5
 							$scope.submit = !->
 								if !$rootScope.login
 									alert("登录了才能评论")

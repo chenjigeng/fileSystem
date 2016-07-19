@@ -28,6 +28,10 @@
           templateUrl: "passage/passage-list/passage-list.html",
           controller: function($scope, $http, $rootScope, $state, result){
             $scope.passages = result.data.data;
+            $scope.limit = 3;
+            $scope.addMoreItems = function(){
+              $scope.limit += 3;
+            };
             console.log(result);
             console.log($scope.passages);
             $scope.show = function(id){

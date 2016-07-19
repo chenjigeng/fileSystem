@@ -7,6 +7,11 @@
           templateUrl: "passage/show-passage/show-passage.html",
           controller: function($scope, $resource, $rootScope, $state, result, $http){
             $scope.passage = result.data.data[0];
+            $scope.limit = 5;
+            $scope.addMoreItems = function(){
+              console.log($scope.limit);
+              $scope.limit += 5;
+            };
             $scope.submit = function(){
               var comment;
               if (!$rootScope.login) {
