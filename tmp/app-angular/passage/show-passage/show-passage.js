@@ -8,6 +8,11 @@
           controller: function($scope, $resource, $rootScope, $state, result, $http){
             $scope.passage = result.data.data[0];
             $scope.limit = 5;
+            $scope.showProfile = function(author){
+              $state.go("user.show-profile", {
+                id: author
+              });
+            };
             $scope.addMoreItems = function(){
               console.log($scope.limit);
               $scope.limit += 5;
@@ -20,7 +25,8 @@
               }
               comment = {
                 body: $scope.content,
-                author: $rootScope.user.name
+                author: $rootScope.user.name,
+                email: $rootScope.user.email
               };
               console.log("comment", comment);
               $scope.passage.comments.push(comment);

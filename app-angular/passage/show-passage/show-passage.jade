@@ -11,7 +11,8 @@ div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-50
 			div.md-subhead  
 				{{"#" + ($index + 1)}}楼 
 				span(am-time-ago="comment.date")
-				| |{{ comment.author}}
+				| |
+				span.md-accent(ng-click="showProfile(comment.email)" ng-src="").blue {{ comment.author}}
 			p(layout-padding) {{ comment.body }}
 
 

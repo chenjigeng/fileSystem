@@ -71,12 +71,27 @@ userCtrl.logout = function(req, res) {
 
 userCtrl.get = function(req, res) {
 	console.log(req.params.email);
-	user.find({email: req.params.email}, function(err, target) {
-		if (err) {
-			console.log(err);
-			return res.send(401);
-		}
-		console.log(target);
-		res.send({user:target});
-	})
+	console.log("name", req.params.name)
+	if (req.params.email) {
+		console.log('come email');
+		user.find({email: req.params.email}, function(err, target) {
+			if (err) {
+				console.log(err);
+				return res.send(401);
+			}
+			console.log(target);
+			res.send({user:target});
+		})
+	}
+	else if (req.params.name) {
+		console.log("come name");
+		user.find({name: req.params.name}, function(err, target) {
+			if (err) {
+				console.log(err);
+				return res.send(401);
+			}
+			console.log(target);
+			res.send({user:target});
+		})
+	}
 }

@@ -9,6 +9,8 @@ angular.module "app"
 						controller: ($scope, $resource, $rootScope, $state, result, $http) !->
 							$scope.passage = result.data.data[0];
 							$scope.limit = 5
+							$scope.show-profile = (author)!->
+								$state.go("user.show-profile", { id: author});
 							$scope.addMoreItems = !->
 								console.log $scope.limit
 								$scope.limit += 5
@@ -16,7 +18,7 @@ angular.module "app"
 								if !$rootScope.login
 									alert("登录了才能评论")
 									return
-								comment = {body: $scope.content, author: $rootScope.user.name}
+								comment = {body: $scope.content, author: $rootScope.user.name, email: $rootScope.user.email}
 								console.log("comment", comment);
 								$scope.passage.comments.push(comment);
 								console.log($scope.passage);

@@ -13,7 +13,7 @@ div(layout="column" layout-padding).md-whiteframe-4dp.passage.mt-50
       input(ng-model="user.link")
     div
       md-button.md-accent.upload(ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-resize="{width: 200, heigth: 200}"
-      ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100") 上传头像: Select
+      ngf-accept="'image/*'" ngf-max-size="20MB") 上传头像: Select
       img(ngf-src="file" )
     md-button.md-accent(ng-click="edit()") 确定修改
 
