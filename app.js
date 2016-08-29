@@ -33,9 +33,9 @@ app.use(express.static('./tmp/app-angular'));
 app.use('/post', routes);
 app.use('/users', users);
 
-app.get("/", function(req, res) {
-  res.sendfile("./tmp/app-angular/index.html");
-})
+// app.get("/", function(req, res) {
+//   res.sendfile("./tmp/app-angular/index.html");
+// })
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {

@@ -14,7 +14,7 @@ gulp.task('server:start',['inject'], function() {
 //启动浏览器
 gulp.task('browser:run', function() {
   browserSync.init({
-    proxy: 'http://localhost:3010'
+    proxy: 'http://localhost:3010',
   });
 });
 
