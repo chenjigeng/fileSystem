@@ -7,8 +7,8 @@
   
    gulp serve
 
-##技术:
+##代码目录:
   
   app-angualr为前端的代码
-  
+
   app-express为后台的代码
