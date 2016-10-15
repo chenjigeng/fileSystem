@@ -1,9 +1,0 @@
-div(layout='column' layout-padding).passage.md-whiteframe-8dp.mt-20
-	form(name="passForm" layout="column")
-		md-input-container
-			label 标题
-			input(ng-model="passage.title" name="title" required)
-			div(ng-messages="passForm.title.$error")
-				div(ng-message="required") 标题不能为空
-		div(text-angular ng-model="passage.content")
-		md-button.md-primary.md-accent(ng-click="submit()" ng-disabled="!passForm.$valid") 保存

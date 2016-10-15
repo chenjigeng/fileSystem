@@ -1,4 +1,6 @@
-var mongoose = require("./mongoose")
+var mongoose = require("mongoose");
+
+
 
 var post = mongoose.Schema({
 	title: String,
