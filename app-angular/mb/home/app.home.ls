@@ -1,11 +1,11 @@
-angular.module("app")
+angular.module("mb")
 	.config ($state-provider, $url-router-provider) !->
 		$url-router-provider.otherwise("/home");
 		$state-provider
-			.state("home", {
+			.state("mb.home", {
 				views:
 					"main@":
-						templateUrl: 'home/home.html'
+						templateUrl: 'mb/home/home.html'
 						controller-as: "vm"
 						controller: !->
 							@name = "cjg"

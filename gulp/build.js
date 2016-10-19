@@ -41,8 +41,9 @@ gulp.task("watch", ["sass:watch", "jade:watch", "livescript:watch"], function() 
 	gulp.watch("./app-angular/**/*.html", ['server-restart']);
 })
 
+
 gulp.task("build", ["livescript", "sass", "jade", "watch"], function() {
-	gulp.src(["./app-angular/**/*.json"])
+	gulp.src(["./app-angular/**/*.js"])
 		.pipe(gulp.dest("tmp/app-angular/"))
 	return gulp.src(["./app-angular/**/*.html"])
 		.pipe(gulp.dest('tmp/app-angular/'))
