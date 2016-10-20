@@ -1,4 +1,37 @@
-div(layout="column")
-	md-content
-		h1 this is Home
-		h1 {{ vm.name }}
+mixin mh-fixed-header
+    div.navbar-default.navbar-fixed-top(layout="row" layout-align="space-between" flex="100").mh-top
+        span.glyphicon.glyphicon-arrow-left.left.fs-30.mt-30.ml-20(ui-sref="home.activity") 返回
+        span.fs-40.mt-20 汤臣倍健
+        span.glyphicon.glyphicon-user.fs-30.mt-32.mr-20
+
+#mb-home
+  +mh-fixed-header
+  .mb-home-header(layout="row" layout-align="space-between").p-20.mt-105.mr-5.mb-5.ml-5
+    div(layout="row")
+      img(src="assets/u34.jpg").mb-home-brand.pr-10
+      p.mh-header-font 档案系统
+    span.mh-kind(ng-click="vm.gotoCatagory()") 类目
+  div(layout="row" layout-align="space-around").m-20.mh-kinds.p-30
+    div(layout="column" flex="25")
+      img(src="assets/u214.png").mh-img-1
+      span 企业VI标准
+    div(layout="column" flex="25")
+      img(src="assets/u210.png").mh-img-2
+      span 文档模块
+    div(layout="column" flex="25")
+      img(src="assets/u218.png").mh-img-3
+      span 收藏夹
+  div(layout="column").p-14
+    div(layout="row").mb-20
+      span.md-title.fs-34 最新文档
+      md-divider
+    md-list
+      md-list-item.md-2-line(ng-repeat="file in vm.files")
+        div.md-list-item-text.mb-30
+          p.tc-black.fs-30 {{file.name}}
+          p.fs-30.pt-30  {{ file.filefolder}} {{ file.date }}
+        img(ng-src="{{file.assets}}").mh-file-img
+        md-divider.mh-btw-6
+
+
+

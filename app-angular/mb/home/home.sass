@@ -1,5 +1,6 @@
 body
-	font-family: Arial, "Microsoft YaHei", "微软雅黑", sans-serif
+	font-family: "Microsoft YaHei", "微软雅黑", sans-serif
+  background-color: white
 
 .nav
 	background-color: black
@@ -8,8 +9,57 @@ body
 .right
 	float: right
 
+#mb-home
+  background-color: white
+
+.mh-kinds
+  font-size: 28px
+
+.mh-img-1
+  width: 138px
+
+.mh-img-2
+  width: 115px;
+  margin-top: -18px;
+
+.mb-home-header
+  background-color: white
+  border: solid 1px black
+  height: 141px
+
+.mh-header-font
+  font-size: 28px
+  line-height: 100px;
+
+.mb-home-brand
+  height: 110px
 // 预定义样式 
-@for $i from 1 through 100 
+
+.mh-img-3
+  width: 95px
+
+.mh-top
+  background-color: rgb(102, 98, 98) !important
+  color: white !important
+  height: 100px !important
+
+.mh-kind
+  height: 10px;
+  line-height: 140px;
+  text-decoration: underline;
+  font-size: 26px;
+
+.tc-black
+  color: black !important
+
+.mh-btw-6
+  border-top-width: 6px !important
+
+.mh-file-img
+  width: 120px
+  height: 120px
+
+@for $i from 1 through 105
   .p-#{$i}
     padding: $i+px !important
   .pl-#{$i}
@@ -30,3 +80,5 @@ body
     margin-top: $i+px !important
   .mb-#{$i}
     margin-bottom: $i+px !important
+  .fs-#{$i}
+    font-size: $i+px !important

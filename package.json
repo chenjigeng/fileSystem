@@ -13,6 +13,7 @@
     "connect-multiparty": "^2.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
+    "del": "^2.2.2",
     "express": "~4.13.4",
     "gulp-develop-server": "^0.5.2",
     "gulp-inject": "^4.1.0",
