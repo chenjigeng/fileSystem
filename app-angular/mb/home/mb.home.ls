@@ -6,7 +6,8 @@ angular.module("mb")
           "main@":
             templateUrl: 'mb/home/home.html'
             controller-as: "vm"
-            controller: ($state)!->
+            controller: ($state, $mdDialog)!->
+              # alert(window.navigator.connection);
               @name = "cjg"
               @files = 
                 * name: "汤臣倍健2016年最新版本的PPT模板"
@@ -27,5 +28,17 @@ angular.module("mb")
                   assets: "assets/u253.png"
               @.gotoCatagory = !->
                 $state.go "mb.catagory"
+              @.get-more-files = !->
+                new-files = 
+                  * name: "汤臣倍健2016年最新版本的PPT模板"
+                    filefolder: "文档模板"
+                    date: "2016-10-13"
+                    assets: "assets/u218.png"
+                  * name: "我是一个压缩的文档"
+                    filefolder: "档案类目名"
+                    date: "2016-10-13"
+                    assets: "assets/u257.png"
+                Array.prototype.push.apply @files, new-files
+                # requese more files
         url: "/home"
       })
