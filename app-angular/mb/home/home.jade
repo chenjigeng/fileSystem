@@ -1,26 +1,26 @@
 mixin mh-fixed-header
     div.navbar-default.navbar-fixed-top(layout="row" layout-align="space-between" flex="100").mh-top
-        span.glyphicon.glyphicon-arrow-left.left.fs-30.mt-30.ml-20(ui-sref="home.activity") 返回
+        span.glyphicon.glyphicon-arrow-left.left.fs-40.mt-30.ml-20(ui-sref="home.activity") 返回
         span.fs-40.mt-20 汤臣倍健
         span.glyphicon.glyphicon-user.fs-30.mt-32.mr-20
 
 #mb-home
-  +mh-fixed-header
+  mbheader
   .mb-home-header(layout="row" layout-align="space-between").p-20.mt-105.mr-5.mb-5.ml-5
-    div(layout="row")
+    div(layout="row" flex="50")
       img(src="assets/u34.jpg").mb-home-brand.pr-10
       p.mh-header-font 档案系统
-    span.mh-kind(ng-click="vm.gotoCatagory()") 类目
-  div(layout="row" layout-align="space-around").m-20.mh-kinds.p-30
+    span.fs-30.mh-kind(ng-click="vm.gotoCatagory()") 类目
+  div(layout="row" layout-align="space-around").mb-10.mt-10.ml-30.mh-kinds.p-30
     div(layout="column" flex="25")
       img(src="assets/u214.png").mh-img-1
-      span 企业VI标准
+      span.mt-20 企业VI标准
     div(layout="column" flex="25")
-      img(src="assets/u210.png").mh-img-2
-      span 文档模块
+      img(src="assets/1.jpg").mh-img-2
+      span.mt-8 文档模块
     div(layout="column" flex="25")
       img(src="assets/u218.png").mh-img-3
-      span 收藏夹
+      span.mt-10 收藏夹
   div(layout="column").p-14
     div(layout="row").mb-20
       span.md-title.fs-34 最新文档
@@ -32,6 +32,8 @@ mixin mh-fixed-header
           p.fs-30.pt-30  {{ file.filefolder}} {{ file.date }}
         img(ng-src="{{file.assets}}").mh-file-img
         md-divider.mh-btw-6
+  div.mh-more
+    p.fs-26(ng-click="vm.getMoreFiles()") 更多 +
 
 
 

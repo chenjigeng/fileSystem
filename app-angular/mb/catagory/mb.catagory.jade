@@ -1,16 +1,16 @@
 mixin mb-fixed-header
     div.navbar-default.navbar-fixed-top(layout="row" layout-align="space-between" flex="100").mh-top
-        span.glyphicon.glyphicon-arrow-left.left.fs-30.mt-30.ml-20(ui-sref="mb.home") 返回
+        span.glyphicon.glyphicon-arrow-left.left.fs-40.mt-30.ml-20(ui-sref="mb.home") 返回
         span.fs-40.mt-20 汤臣倍健
         span.glyphicon.glyphicon-user.fs-30.mt-32.mr-20
 
 #md-catagory
-  +mb-fixed-header
+  mbheader
   .mb-catagories.mt-105
-    div(layout="row").pt-20
-      span.divider(flex="40")
-      span.fs-30 档案类目
-      span.divider(flex="40")
+    div(layout="row").pt-20.m-18
+      span.mb-divider.mt-18(flex="40")
+      span.fs-30.pl-15.pr-15  档案类目
+      span.mb-divider.mt-18(flex)
     div(layout="row" layout-wrap)
       div(ng-repeat="filefolder in vm.filefolders" flex="45").m-18
         div.mc-folder
