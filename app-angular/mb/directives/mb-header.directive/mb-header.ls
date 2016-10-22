@@ -2,7 +2,7 @@ angular.module "mb"
   .directive 'mbheader', ->
     return {
       restrict: "E"
-      templateUrl: "mb/directives/mb-header.html"
+      templateUrl: "mb/directives/mb-header.directive/mb-header.html"
       replace: true,
       controller: ($scope, $element, $attrs, $transclude, $log, $state) !->
 
