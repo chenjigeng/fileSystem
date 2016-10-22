@@ -1,23 +1,18 @@
-mixin mh-fixed-header
-	div.navbar-default.navbar-fixed-top(layout="row" layout-align="space-between" flex="100").mh-top
-		span.glyphicon.glyphicon-arrow-left.left.fs-30.mt-30.ml-20(ui-sref="home.activity") 返回
-		span.fs-40.mt-20 汤臣倍健
-		span.glyphicon.glyphicon-user.fs-30.mt-32.mr-20
+
+
 
 #mb-file-list
-	//- +mh-fixed-header
-	div.path
-	div.folder-list-container.p-12(layout="column")
-		div.folder-list.p-12(layout="column" ng-repeat='folder in vm.folder.folderList')
-			div.list-item(layout="row")
-				img(src="assets/u210.png")
-				span {{ folder.name }}
-				span {{ folder.size }}
-			md-divider
-	div.file-list-container.p-12
-		div.file-list.p-12(layout="column" ng-repeat='file in vm.folder.fileList')
-			div.list-item.p-12(layout="row")
-				img(src="assets/u210.png")
-				span {{ file.name }}
-				span {{ file.size }}
+	mbheader
+	div.path.mt-105
+		span {{ vm.path }}
+	div.list-container.p-12(layout="column")
+		div.list-item.p-12(layout="column" ng-repeat='file in vm.files')
+			div(layout="row" layout-align="start center" flex)
+				div.image-box
+					img(src="assets/u210.png")
+				div(flex)
+					span.file-name {{ file.fileName }}.{{ file.postfix }}
+					div.file-info(flex layout="row" layout-align="space-between")
+						span {{ file.date }}
+						span {{ file.size }}
 			md-divider
