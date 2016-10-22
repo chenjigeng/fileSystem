@@ -2,12 +2,19 @@ angular.module("mb")
   .config ($state-provider, $url-router-provider) !->
     $state-provider
       .state("mb.home", {
+        resolve:
+          files: (api-resolver) ->
+            api-resolver
+              .resolve "files@get"
+              .then( (data) ->
+                console.log data
+                data.files)
         views:
           "main@":
             templateUrl: 'mb/home/home.html'
             controller-as: "vm"
-            controller: ($state, $mdDialog)!->
-              # alert(window.navigator.connection);
+            controller: ($state, $mdDialog, files)!->
+              console.log files
               @name = "cjg"
               @files = 
                 * name: "汤臣倍健2016年最新版本的PPT模板"

@@ -7,7 +7,7 @@ angular.module "app", ["ui.router",
                       'ngMessages', 
                       'ngFileUpload',
                       'ngResource', 
-                      'angularMoment', 
+                      'angularMoment',
                       "mb", 
                       "pc"]
   .run(

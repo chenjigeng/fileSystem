@@ -1,5 +1,5 @@
 angular.module "mb"
-  .directive 'mbheader', ->
+  .directive 'mbHeader', ->
     return {
       restrict: "E"
       templateUrl: "mb/directives/mb-header.directive/mb-header.html"
