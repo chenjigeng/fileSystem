@@ -1,0 +1,36 @@
+{
+    "files": [
+        {
+            "id": "4f887961-50da-4497-b175-72f0476b94d3",
+            "folderName": "收藏夹",
+            "size": "100 MB",
+            "date": "2016-10-21 20:47:46",
+            "type": "folder",
+            "path": "./public"
+        },
+        {
+            "id": "5a28d4db-a2ac-44fb-9a62-bb9da00c9694",
+            "fileName": "电脑软件",
+            "size": "312 MB",
+            "date": "2016-10-21 20:47:46",
+            "type": "folder",
+            "path": "./public"
+        },
+        {
+            "id": "f46a9246-6aa7-4c73-b8c2-d440d3b134f3",
+            "fileName": "企业VI标准",
+            "size": "200 MB",
+            "date": "2016-10-21 20:47:46",
+            "type": "folder",
+            "path": "./public"
+        },
+        {
+            "id": "51a16736-3233-4a7a-914b-cd20ffebe2d8",
+            "fileName": "文档模板",
+            "size": "312 MB",
+            "date": "2016-10-21 20:47:46",
+            "type": "folder",
+            "path": "./public"
+        }
+    ]
+}

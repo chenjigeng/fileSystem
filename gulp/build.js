@@ -2,6 +2,7 @@
 var gulp = require("gulp")
 var $ = require('gulp-load-plugins')({pattern: ['gulp-*']});
 var browserSync = require('browser-sync').create();
+var del = require("del");
 
 var dest = "./.tmp"
 gulp.task('livescript', function() {
@@ -41,8 +42,12 @@ gulp.task("watch", ["sass:watch", "jade:watch", "livescript:watch"], function() 
 	gulp.watch("./app-angular/**/*.html", ['server-restart']);
 })
 
+gulp.task("clean", function() {
+	return del("tmp");
+})
+
 gulp.task("build", ["livescript", "sass", "jade", "watch"], function() {
-	gulp.src(["./app-angular/**/*.json"])
+	gulp.src(["./app-angular/**/*.js"])
 		.pipe(gulp.dest("tmp/app-angular/"))
 	return gulp.src(["./app-angular/**/*.html"])
 		.pipe(gulp.dest('tmp/app-angular/'))
