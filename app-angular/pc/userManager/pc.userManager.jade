@@ -1,0 +1,17 @@
+div
+  div.mt-10(layout='row')
+    p.pl-40(flex-gt-sm='10')
+      span.glyphicon.glyphicon-home.pc-blue
+      span.pl-10.pc-text1 档案管理
+    p(flex-gt-sm='10')
+      span.glyphicon.glyphicon-play.pc-rightArrow
+      span.pl-10.pc-text1 用户管理
+    span(flex)
+    button.mr-100.btn-success(flex-gt-sm='10') 添加
+  div.pc-user.mr-50.ml-50.mt-20.mb-15.pb-10(layout='row' ng-repeat='user in vm.users')
+    span.ml-30(flex-gt-sm='15') {{user.name}}
+    span(flex-gt-sm='15') 股份公司-{{user.department}}
+    span(flex-gt-sm='10') 启用
+    span(flex-gt-sm='40') 公司文档模块，行政管理规章，合同管理
+    span.pc-button(flex-gt-sm='10' ng-click='vm.editUser($event)') 编辑
+    span.pc-button(flex-gt-sm='10' ng-click='vm.deleteUser()') 删除

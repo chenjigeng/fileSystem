@@ -1,0 +1,24 @@
+md-dialog
+  form.ml-10.mr-10(ng-cloak)
+    md-toobar(layout='row')
+      div.md-toobar-tools
+        span.glyphicon.glyphicon-remove
+        span(flex)
+        span 用户编辑
+    md-dialog-content(layout='column')
+      p(layout='row')
+        label(flex-sm='20' flex-gt-sm='20') 员工号
+        input(flex-sm='80' flex-gt-sm='80')
+      p(layout='row')
+        label(flex-sm='20' flex-gt-sm='20') 姓名
+        input(flex-sm='80' flex-gt-sm='80')
+      p(layout='row')
+        label(flex-sm='20' flex-gt-sm='20') 类型
+        button(flex-sm='35' flex-gt-sm='35') 管理员
+        span(flex)
+        button(flex-sm='35' flex-gt-sm='35') 普通用户
+      p(layout='row')
+        label(flex-sm='20') 权限范围
+    md-dialog-actions
+      md-button(ng-click='save()') 保存
+
