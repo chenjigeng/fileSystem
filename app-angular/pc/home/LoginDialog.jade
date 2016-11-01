@@ -1,0 +1,11 @@
+md-dialog(aria-label="Login" ng-cloak)
+  md-content(layout-padding layout="column" layout-align="center center")
+    .md-title 登陆
+    form(name="loginForm" layout="column" )
+      md-input-container
+        label 邮箱
+        input(ng-model="email" required)
+      md-input-container
+        label 密码
+        input(ng-model="password" required)
+      md-button(ng-disabled="!loginForm.$valid" ng-click="submit()").md-primary.md-accent 登陆

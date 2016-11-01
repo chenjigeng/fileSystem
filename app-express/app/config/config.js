@@ -1,4 +1,4 @@
 module.exports = config = {
 	port: 27017,
-	host: "mongodb://localhost/blog"
+	host: "mongodb://localhost/files"
 }

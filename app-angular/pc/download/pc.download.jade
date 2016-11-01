@@ -1,0 +1,27 @@
+#pc-download.p-20
+  #unlogin(ng-if="!login")
+    span.ct-red 请先登录
+  #islogin(ng-if="login")
+    md-content
+      md-tabs.md-dynamic-height.md-border-bottom
+        md-tab(label="文件")
+          table.table.table-striped.table-hover
+            tr
+              th 文件名
+              th 下载
+            tr(ng-repeat="file in user.files" ng-if="file.kind != 1")
+              td {{ file.fileName }}
+              td
+                a(ng-href="{{file.url}}" target="_Blank" download="{{ file.fileName }} ") 点击下载
+          div(ng-repeat="file in user.files")
+
+        md-tab(label="图像")
+          table.table.table-striped.table-hover
+            tr
+              th 文件名
+              th 下载
+            tr(ng-repeat="file in user.files" ng-if="file.kind == 1")
+              td {{ file.fileName }}
+              td
+                a(ng-href="{{file.url}}" target="_Blank" download="{{ file.fileName }}") 点击下载
+          div(ng-repeat="file in user.files")

@@ -1,1 +1,10 @@
-p images
+#image.p-20
+  #unlogin(ng-if="!login")
+    span.ct-red 请先登录
+  #islogin(ng-if="login")
+    #file-list
+      div(layout="row" layout-wrap)
+        div(ng-repeat="file in user.files" flex="20").mb-20
+          div(ng-if="file.kind == 1" layout="row")
+            img.preview-img(ng-src="{{file.url}}" ng-click="vm.preview(file, $event)")
+            md-button 删除

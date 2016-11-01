@@ -13,8 +13,8 @@ var multipart = require('connect-multiparty');
 
 //用于注册路由
 function registRouter(app) {
-	app.use('/post', posts);
-	app.use('/users', users);
+	app.use('/api/post', posts);
+	app.use('/api/users', users);
 }
 
 module.exports = function() {

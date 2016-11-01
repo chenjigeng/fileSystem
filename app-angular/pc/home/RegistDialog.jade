@@ -1,0 +1,15 @@
+md-dialog(aria-label="Regist" ng-cloak)
+  md-content(layout-padding layout="column" layout-align="center center")
+    .md-title 注册账号
+    form(name="registForm" layout="column" )
+      md-input-container
+        label 账号
+        input(ng-model="name" required)
+      md-input-container
+        label 密码
+        input(ng-model="password" required)
+      md-input-container
+        label 邮箱
+        input(ng-model="email" required)
+      md-button(ng-disabled="!registForm.$valid" ng-click="submit()").md-primary.md-accent 注册
+    div(ng-show="error").warn {{ vm.err }}

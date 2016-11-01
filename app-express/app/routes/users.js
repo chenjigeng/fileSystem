@@ -24,6 +24,7 @@ router.post("/edit", function(req, res) {
 })
 
 router.post("/uploadFile",multipartyMiddleware, function(req, res) {
+  console.log("helo");
 	userCtrl.uploadFile(req, res);
 })
 
@@ -31,4 +32,13 @@ router.get("/:email", function(req, res) {
 	userCtrl.get(req, res);
 })
 
+router.get("/getAllFiles", function(req, res) {
+	console.log("getFiles");
+	userCtrl.getAllFiles(req, res);
+})
+
+router.post("/uploadImage", multipartyMiddleware, function(req, res) {
+	console.log('uploadImage')
+	userCtrl.uploadImage(req, res);
+})
 module.exports = router;

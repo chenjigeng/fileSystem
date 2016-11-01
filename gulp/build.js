@@ -39,7 +39,7 @@ gulp.task("livescript:watch", function() {
 })
 
 gulp.task("watch", ["sass:watch", "jade:watch", "livescript:watch"], function() {
-	gulp.watch("./app-angular/**/*.html", ['server-restart']);
+	gulp.watch("./app-angular/**/*.html", ['browser:reload']);
 })
 
 gulp.task("clean", function() {

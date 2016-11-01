@@ -1,12 +1,14 @@
 div.mt-20.md-12
   div.pc-header(layout-gt-sm='row').m-0.p-0
-    span.pc-headerBig(flex-gt-sm='20').pl-40 档案管理
-    span.pc-headerMedium(flex-gt-sm='10' ui-sref='.catagory') 类目管理
-    span.pc-headerMedium(flex-gt-sm='10') 文档管理
+    span.pc-headerBig(flex-gt-sm='20').pl-40 文件管理
+    span.pc-headerMedium(flex-gt-sm='10' ui-sref=".catagory") 文档管理
     span.pc-headerMedium(flex-gt-sm='10' ui-sref='.images') 照片影像
-    span.pc-headerMedium(flex-gt-sm='10' ui-sref='.userManager') 用户管理
+    span.pc-headerMedium(flex-gt-sm="10" ui-sref=".download") 下载专区
+    span.pc-headerMedium(flex-gt-sm="10" ui-sref=".upload") 上传专区
     span(flex)
-    span.pc-headerSmall(flex-gt-sm='10') 管理员
-    span.pc-headerSmall(flex-gt-sm='10') 退出
+    span.pc-headerSmall(flex-gt-sm='10' ng-if="login") {{ user.name}}
+    span.pc-headerSmall(flex-gt-sm='10' ng-if="login" ng-click="vm.logout()") 退出
+    span.pc-headerSmall(flex-gt-sm='10' ng-if="!login" ng-click="vm.showRegist($event)") 注册
+    span.pc-headerSmall(flex-gt-sm='10' ng-if="!login" ng-click="vm.showLogin($event)") 登录
   md-content
     div(ui-view='content')

@@ -19,14 +19,14 @@ gulp.task('browser:run', function() {
 });
 
 //重启服务器
-gulp.task('server-restart', ['inject'], function() {
+gulp.task('server-restart', function() {
   server.restart(function() {
     gulp.start('browser:reload');
   });
 });
 
 //重启浏览器
-gulp.task('browser:reload', function() {
+gulp.task('browser:reload', ['inject'], function() {
   browserSync.reload();
 });
 

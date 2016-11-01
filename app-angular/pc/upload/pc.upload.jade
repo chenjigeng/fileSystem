@@ -1,0 +1,19 @@
+#pc-upload.p-20
+  #unlogin(ng-if="!login")
+    span.ct-red 请先登录
+  #islogin(ng-if="login")
+    md-content
+      md-tabs.md-dynamic-height.md-border-bottom
+        md-tab(label="文件上传")
+          form(name="fileupload")
+            md-button.md-warn.md-primary(ngf-select ng-model="vm.file" name="file" ngf-multiple="true")
+              span Select
+            md-button(ng-click="vm.fileSubmit()") 
+              span submit
+        md-tab(label="图像上传")
+          form(name="fileupload")
+            md-button.md-warn.md-primary(ngf-select ng-model="vm.img" name="file" ngf-pattern="'image/*'" ngf-multiple="true")
+              span Select
+            md-button(ng-click="vm.imgSubmit()") 
+              span submit
+            img(ngfngf-thumbnail="vm.img")
