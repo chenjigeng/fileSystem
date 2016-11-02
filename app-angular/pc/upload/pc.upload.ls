@@ -7,6 +7,7 @@ angular.module("pc")
             templateUrl: 'pc/upload/pc.upload.html'
             controller-as: "vm"
             controller: (Upload, $root-scope, $http)->
+
               #文件上传
               @fileSubmit = !->
                 if (@file)
@@ -44,6 +45,14 @@ angular.module("pc")
                 else
                   alert("请选择图像")
 
+              #更新用户信息
+              updateUser = !->
+                $http.get "/api/users/getAllFiles", {params: {"id": $root-scope.user._id}}
+                      .then(
+                        (data) !->
+                          $root-scope.user = data.data
+                      )
+                      
               @name = "cjg"
         url: "/upload"
       })

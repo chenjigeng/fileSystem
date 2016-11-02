@@ -179,3 +179,15 @@ userCtrl.get = function(req, res) {
 		}
 	})
 }
+
+userCtrl.deleteFileById = function(req, res) {
+	File.findById(req.params.fileId).populate("owner").exec(function(err, file) {
+		User = file.owner;
+		index = User.files.indexOf(file._id);
+		User.files.splice(index, 1);
+		user.update({_id:User._id}, {$set: User}, function(err, u) {
+		});	
+		File.remove({_id: req.params.fileId});
+		res.send(200);
+	})
+}

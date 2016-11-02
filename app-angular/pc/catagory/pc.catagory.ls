@@ -23,10 +23,17 @@ angular.module("pc")
               updateUser = !->
                 $http.get "/api/users/getAllFiles", {params: {"id": $root-scope.user._id}}
                       .then(
-                        (data) ->
+                        (data) !->
                           $root-scope.user = data.data
                       )
 
+              @delete = (file) !->
+                $root-scope.user.files.splice $root-scope.user.files.indexOf(file), 1
+                $http.delete "api/users/files/" + file._id
+                  .then(
+                    (data) !->
+                      console.log data
+                  )
               @name = "cjg"
         url: "/catagory"
       })

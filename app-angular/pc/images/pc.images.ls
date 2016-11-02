@@ -19,6 +19,15 @@ angular.module("pc")
                   clickOutsideToClose:true
                   })
 
+              #删除图片
+              @delete = (file) !->
+                $root-scope.user.files.splice $root-scope.user.files.indexOf(file), 1
+                $http.delete "api/users/files/" + file._id
+                  .then(
+                    (data) !->
+                      console.log data
+                  )
+                  
               @name = "cjg"
         url: "/images"
       })

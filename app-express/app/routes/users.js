@@ -14,6 +14,10 @@ router.post('/regist', function(req, res) {
 	userCtrl.regist(req, res);
 })
 
+router.delete("/files/:fileId", function(req, res) {
+	userCtrl.deleteFileById(req, res);
+})
+
 router.post("/login", function(req, res) {
 	userCtrl.login(req, res);
 })
